@@ -207,6 +207,31 @@
         flex-shrink: 0;
       }
 
+      /* Language toggle button */
+      .lang-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: transparent;
+        border: 1.5px solid rgba(0, 119, 182, 0.25);
+        border-radius: 8px;
+        padding: 5px 12px;
+        font-family: "Rajdhani", sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        color: var(--accent2);
+        cursor: pointer;
+        transition: all 0.22s;
+        flex-shrink: 0;
+      }
+      .lang-btn:hover {
+        background: var(--accent2);
+        color: #fff;
+        border-color: var(--accent2);
+        transform: scale(1.05);
+      }
+
       /* hamburger */
       .hamburger {
         display: none;
@@ -1258,17 +1283,22 @@
         </a>
         <div class="nav-links-wrap" id="nav-menu">
           <ul>
-            <li><a href="#hero" class="active">الرئيسية</a></li>
-            <li><a href="#about">من نحن</a></li>
-            <li><a href="#services">خدماتنا</a></li>
-            <li><a href="#why">لماذا نحن</a></li>
-            <li><a href="#vision">رؤيتنا</a></li>
+            <li><a href="#hero" class="active" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
+            <li><a href="#about" data-ar="من نحن" data-en="About Us">من نحن</a></li>
+            <li><a href="#services" data-ar="خدماتنا" data-en="Services">خدماتنا</a></li>
+            <li><a href="#why" data-ar="لماذا نحن" data-en="Why Us">لماذا نحن</a></li>
+            <li><a href="#vision" data-ar="رؤيتنا" data-en="Vision">رؤيتنا</a></li>
           </ul>
           <div class="nav-sep"></div>
-          <a href="#contact" class="nav-cta">تواصل معنا</a>
+          <a href="#contact" class="nav-cta" data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</a>
         </div>
-        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
-          <span></span><span></span><span></span>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <button class="lang-btn" id="lang-toggle" onclick="toggleLang()" title="Switch Language">
+            <span id="lang-flag">EN</span>
+          </button>
+          <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+          </div>
         </div>
       </div>
     </nav>
@@ -1280,34 +1310,34 @@
       <div class="hero-bg-shape s3"></div>
       <div class="hero-content">
         <!-- <div class="hero-badge">مرخصة من دائرة الاقتصاد والسياحة في دبي</div> -->
-        <h1>مؤسسة <span>ITN GAMA</span><br />لبرمجة الرقائق الإلكترونية</h1>
+        <h1 data-ar="مؤسسة <span>ITN GAMA</span><br />لبرمجة الرقائق الإلكترونية" data-en="<span>ITN GAMA</span><br />For Electronic Chips Programming">مؤسسة <span>ITN GAMA</span><br />لبرمجة الرقائق الإلكترونية</h1>
         <p class="hero-en">ITN GAMA For Electronic Chips Programming EST.</p>
-        <p class="hero-desc">
+        <p class="hero-desc" data-ar="رواد في مجال تقنيات البرمجة الإلكترونية والحلول الرقمية المتطورة في دولة الإمارات العربية المتحدة. نقدم خدمات احترافية في برمجة الرقائق الإلكترونية، التدوين الإلكتروني، والمنصات الرقمية التفاعلية بأعلى معايير الجودة والكفاءة." data-en="Leaders in electronic programming technologies and advanced digital solutions in the United Arab Emirates. We deliver professional services in microchip programming, electronic publishing, and interactive digital platforms with the highest standards of quality and efficiency.">
           رواد في مجال تقنيات البرمجة الإلكترونية والحلول الرقمية المتطورة في
           دولة الإمارات العربية المتحدة. نقدم خدمات احترافية في برمجة الرقائق
           الإلكترونية، التدوين الإلكتروني، والمنصات الرقمية التفاعلية بأعلى
           معايير الجودة والكفاءة.
         </p>
         <div class="hero-btns">
-          <a href="#services" class="btn-primary"> اكتشف خدماتنا</a>
-          <a href="#contact" class="btn-outline"> تواصل معنا</a>
+          <a href="#services" class="btn-primary" data-ar="اكتشف خدماتنا" data-en="Explore Our Services"> اكتشف خدماتنا</a>
+          <a href="#contact" class="btn-outline" data-ar="تواصل معنا" data-en="Contact Us"> تواصل معنا</a>
         </div>
         <div class="hero-stats">
           <div class="stat">
-            <div class="stat-num">١٠<span>+</span></div>
-            <div class="stat-label">خدمات متخصصة نشطة</div>
+            <div class="stat-num">10<span>+</span></div>
+            <div class="stat-label" data-ar="خدمات متخصصة نشطة" data-en="Active Specialized Services">خدمات متخصصة نشطة</div>
           </div>
           <div class="stat">
-            <div class="stat-num"><span>١٠٠</span>٪</div>
-            <div class="stat-label">التزام بالجودة</div>
+            <div class="stat-num"><span>100</span>٪</div>
+            <div class="stat-label" data-ar="التزام بالجودة" data-en="Quality Commitment">التزام بالجودة</div>
           </div>
           <div class="stat">
-            <div class="stat-num">٢٤<span>/٧</span></div>
-            <div class="stat-label">دعم فني متواصل</div>
+            <div class="stat-num">24<span>/7</span></div>
+            <div class="stat-label" data-ar="دعم فني متواصل" data-en="Continuous Tech Support">دعم فني متواصل</div>
           </div>
           <div class="stat">
-            <div class="stat-num">دبي</div>
-            <div class="stat-label">قلب الأعمال في الإمارات</div>
+            <div class="stat-num" data-ar="دبي" data-en="Dubai">دبي</div>
+            <div class="stat-label" data-ar="قلب الأعمال في الإمارات" data-en="Business Hub of UAE">قلب الأعمال في الإمارات</div>
           </div>
         </div>
       </div>
@@ -1317,62 +1347,58 @@
     <section id="about">
       <div class="container">
         <div class="section-header reveal">
-          <span class="section-tag">من نحن</span>
-          <h2 class="section-title">تعرّف على <span>مؤسستنا</span></h2>
+          <span class="section-tag" data-ar="من نحن" data-en="About Us">من نحن</span>
+          <h2 class="section-title" data-ar="تعرّف على <span>مؤسستنا</span>" data-en="Get to Know <span>Our Foundation</span>">تعرّف على <span>مؤسستنا</span></h2>
           <div class="divider"></div>
-          <p class="section-sub">
+          <p class="section-sub" data-ar="مؤسسة رائدة في مجال التقنية الإلكترونية والحلول الرقمية بدبي، الإمارات" data-en="A leading institution in electronic technology and digital solutions in Dubai, UAE">
             مؤسسة رائدة في مجال التقنية الإلكترونية والحلول الرقمية بدبي،
             الإمارات
           </p>
         </div>
         <div class="about-grid">
           <div class="about-img-box reveal">
-            <!-- <span class="about-icon-big">🔬</span> -->
             <h3>ITN GAMA<br />For Electronic Chips Programming</h3>
-            <p>
+            <p data-ar="مؤسسة متخصصة مرخصة رسمياً في دبي، تجمع بين الخبرة التقنية والابتكار الرقمي لتقديم حلول متكاملة" data-en="A specialized, officially licensed institution in Dubai, combining technical expertise and digital innovation to deliver comprehensive solutions">
               مؤسسة متخصصة مرخصة رسمياً في دبي، تجمع بين الخبرة التقنية
               والابتكار الرقمي لتقديم حلول متكاملة
             </p>
-            <div class="license-badge">✅ رخصة مهنية رقم: 1615566</div>
+            <div class="license-badge" data-ar="✅ رخصة مهنية رقم: 1615566" data-en="✅ Professional License No: 1615566">✅ رخصة مهنية رقم: 1615566</div>
           </div>
           <div class="about-content reveal">
-            <h2>نحن أكثر من مجرد شركة تقنية</h2>
-            <p>
+            <h2 data-ar="نحن أكثر من مجرد شركة تقنية" data-en="We Are More Than Just a Tech Company">نحن أكثر من مجرد شركة تقنية</h2>
+            <p data-ar="تأسست مؤسسة ITN GAMA لبرمجة الرقائق الإلكترونية في دبي، الإمارات العربية المتحدة، تحت مظلة مؤسسة محمد بن راشد لدعم مشاريع الشباب. نحمل رؤية طموحة لتحقيق التميز في مجال التقنيات الإلكترونية والحلول الرقمية المتطورة." data-en="ITN GAMA was established in Dubai, UAE, under the umbrella of the Mohammed Bin Rashid Establishment for SME Development. We carry an ambitious vision to achieve excellence in electronic technologies and advanced digital solutions.">
               تأسست مؤسسة ITN GAMA لبرمجة الرقائق الإلكترونية في دبي، الإمارات
               العربية المتحدة، تحت مظلة مؤسسة محمد بن راشد لدعم مشاريع الشباب.
               نحمل رؤية طموحة لتحقيق التميز في مجال التقنيات الإلكترونية والحلول
               الرقمية المتطورة.
             </p>
-            <p>
+            <p data-ar="يقودنا فريق متخصص يؤمن بأن التكنولوجيا هي المحرك الأساسي للتطور، ونسعى دائماً لتقديم أفضل الحلول التقنية التي تلبي احتياجات عملائنا وتتجاوز توقعاتهم." data-en="We are led by a specialized team that believes technology is the fundamental driver of progress, always striving to deliver the best technical solutions that meet our clients' needs and exceed their expectations.">
               يقودنا فريق متخصص يؤمن بأن التكنولوجيا هي المحرك الأساسي للتطور،
               ونسعى دائماً لتقديم أفضل الحلول التقنية التي تلبي احتياجات عملائنا
               وتتجاوز توقعاتهم.
             </p>
             <div class="about-features">
               <div class="about-feature">
-                <!-- <div class="feature-ico">🏆</div> -->
                 <div class="feature-text">
-                  <h4>جودة معتمدة</h4>
-                  <p>
+                  <h4 data-ar="جودة معتمدة" data-en="Certified Quality">جودة معتمدة</h4>
+                  <p data-ar="نلتزم بأعلى معايير الجودة في جميع خدماتنا وحلولنا التقنية" data-en="We uphold the highest quality standards across all our services and technical solutions">
                     نلتزم بأعلى معايير الجودة في جميع خدماتنا وحلولنا التقنية
                   </p>
                 </div>
               </div>
               <div class="about-feature">
-                <!-- <div class="feature-ico">💡</div> -->
                 <div class="feature-text">
-                  <h4>ابتكار مستمر</h4>
-                  <p>
+                  <h4 data-ar="ابتكار مستمر" data-en="Continuous Innovation">ابتكار مستمر</h4>
+                  <p data-ar="نواكب أحدث التطورات التكنولوجية في مجال برمجة الرقائق والتقنيات الرقمية" data-en="We keep pace with the latest technological developments in chip programming and digital technologies">
                     نواكب أحدث التطورات التكنولوجية في مجال برمجة الرقائق
                     والتقنيات الرقمية
                   </p>
                 </div>
               </div>
               <div class="about-feature">
-                <!-- <div class="feature-ico">🤝</div> -->
                 <div class="feature-text">
-                  <h4>شراكة حقيقية</h4>
-                  <p>
+                  <h4 data-ar="شراكة حقيقية" data-en="Genuine Partnership">شراكة حقيقية</h4>
+                  <p data-ar="نبني علاقات طويلة الأمد مع عملائنا قائمة على الثقة والاحترافية المتبادلة" data-en="We build long-term relationships with our clients based on mutual trust and professionalism">
                     نبني علاقات طويلة الأمد مع عملائنا قائمة على الثقة
                     والاحترافية المتبادلة
                   </p>
@@ -1388,58 +1414,52 @@
     <section id="why">
       <div class="container">
         <div class="section-header reveal">
-          <span class="section-tag">لماذا نحن؟</span>
-          <h2 class="section-title">ما يميّزنا عن <span>الآخرين</span></h2>
+          <span class="section-tag" data-ar="لماذا نحن؟" data-en="Why Us?">لماذا نحن؟</span>
+          <h2 class="section-title" data-ar="ما يميّزنا عن <span>الآخرين</span>" data-en="What Sets Us <span>Apart</span>">ما يميّزنا عن <span>الآخرين</span></h2>
           <div class="divider"></div>
-          <p class="section-sub">
+          <p class="section-sub" data-ar="نقدم قيمة حقيقية تتجاوز توقعاتك في كل مشروع وكل خدمة" data-en="We deliver real value that exceeds your expectations in every project and every service">
             نقدم قيمة حقيقية تتجاوز توقعاتك في كل مشروع وكل خدمة
           </p>
         </div>
         <div class="why-grid">
           <div class="why-card reveal">
-            <!-- <div class="why-ico">🎯</div> -->
-            <h3>خبرة تقنية متخصصة</h3>
-            <p>
+            <h3 data-ar="خبرة تقنية متخصصة" data-en="Specialized Technical Expertise">خبرة تقنية متخصصة</h3>
+            <p data-ar="فريقنا يمتلك خبرة عميقة ومتخصصة في مجال برمجة الرقائق الإلكترونية والحلول التقنية المتقدمة" data-en="Our team possesses deep, specialized expertise in electronic chip programming and advanced technical solutions">
               فريقنا يمتلك خبرة عميقة ومتخصصة في مجال برمجة الرقائق الإلكترونية
               والحلول التقنية المتقدمة
             </p>
           </div>
           <div class="why-card reveal">
-            <!-- <div class="why-ico">⚡</div> -->
-            <h3>سرعة وكفاءة في التنفيذ</h3>
-            <p>
+            <h3 data-ar="سرعة وكفاءة في التنفيذ" data-en="Speed & Execution Efficiency">سرعة وكفاءة في التنفيذ</h3>
+            <p data-ar="نلتزم بالمواعيد المحددة ونضمن تسليم المشاريع في الوقت المناسب بأعلى مستوى من الجودة" data-en="We meet deadlines and ensure project delivery on time with the highest level of quality">
               نلتزم بالمواعيد المحددة ونضمن تسليم المشاريع في الوقت المناسب
               بأعلى مستوى من الجودة
             </p>
           </div>
           <div class="why-card reveal">
-            <!-- <div class="why-ico">🛡️</div> -->
-            <h3>أمان وموثوقية</h3>
-            <p>
+            <h3 data-ar="أمان وموثوقية" data-en="Security & Reliability">أمان وموثوقية</h3>
+            <p data-ar="نضمن أمان جميع البيانات والأنظمة التي نعمل عليها بأعلى معايير الحماية الإلكترونية" data-en="We guarantee the security of all data and systems we work with using the highest cybersecurity standards">
               نضمن أمان جميع البيانات والأنظمة التي نعمل عليها بأعلى معايير
               الحماية الإلكترونية
             </p>
           </div>
           <div class="why-card reveal">
-            <!-- <div class="why-ico">🌐</div> -->
-            <h3>حضور رقمي قوي</h3>
-            <p>
+            <h3 data-ar="حضور رقمي قوي" data-en="Strong Digital Presence">حضور رقمي قوي</h3>
+            <p data-ar="نساعدك على بناء حضور رقمي متميز من خلال خدماتنا الشاملة في البوابات الإلكترونية والمحتوى الرقمي" data-en="We help you build a distinguished digital presence through our comprehensive services in e-portals and digital content">
               نساعدك على بناء حضور رقمي متميز من خلال خدماتنا الشاملة في
               البوابات الإلكترونية والمحتوى الرقمي
             </p>
           </div>
           <div class="why-card reveal">
-            <!-- <div class="why-ico">💎</div> -->
-            <h3>حلول مخصصة لك</h3>
-            <p>
+            <h3 data-ar="حلول مخصصة لك" data-en="Tailored Solutions for You">حلول مخصصة لك</h3>
+            <p data-ar="نصمم حلولاً تقنية مخصصة تلائم احتياجاتك الفريدة وتحقق أهدافك التجارية والتقنية" data-en="We design custom technical solutions that fit your unique needs and achieve your business and technical goals">
               نصمم حلولاً تقنية مخصصة تلائم احتياجاتك الفريدة وتحقق أهدافك
               التجارية والتقنية
             </p>
           </div>
           <div class="why-card reveal">
-            <!-- <div class="why-ico">📊</div> -->
-            <h3>دعم فني متكامل</h3>
-            <p>
+            <h3 data-ar="دعم فني متكامل" data-en="Comprehensive Technical Support">دعم فني متكامل</h3>
+            <p data-ar="نوفر دعماً فنياً شاملاً قبل وخلال وبعد تنفيذ المشاريع لضمان رضاك التام" data-en="We provide comprehensive technical support before, during, and after project execution to ensure your full satisfaction">
               نوفر دعماً فنياً شاملاً قبل وخلال وبعد تنفيذ المشاريع لضمان رضاك
               التام
             </p>
@@ -1452,69 +1472,57 @@
     <section id="services">
       <div class="container">
         <div class="section-header reveal">
-          <span class="section-tag">خدماتنا</span>
-          <h2 class="section-title">ما نقدّمه لك من <span>خدمات</span></h2>
+          <span class="section-tag" data-ar="خدماتنا" data-en="Our Services">خدماتنا</span>
+          <h2 class="section-title" data-ar="ما نقدّمه لك من <span>خدمات</span>" data-en="What We <span>Offer You</span>">ما نقدّمه لك من <span>خدمات</span></h2>
           <div class="divider"></div>
-          <p class="section-sub">
+          <p class="section-sub" data-ar="خدمات تقنية متكاملة تغطي احتياجاتك في عالم الإلكترونيات والفضاء الرقمي" data-en="Comprehensive technical services covering your needs in the world of electronics and digital space">
             خدمات تقنية متكاملة تغطي احتياجاتك في عالم الإلكترونيات والفضاء
             الرقمي
           </p>
         </div>
         <div class="services-grid">
           <div class="service-card reveal">
-            <!-- <span class="s-ico">🔧</span> -->
-            <h3>برمجة الرقائق الإلكترونية</h3>
-            <p>
+            <h3 data-ar="برمجة الرقائق الإلكترونية" data-en="Electronic Chip Programming">برمجة الرقائق الإلكترونية</h3>
+            <p data-ar="تخصصنا الأول والأساسي. نقدم خدمات برمجة الرقائق الإلكترونية (Microchips) بدقة عالية واحترافية متناهية لمختلف الصناعات والتطبيقات التقنية." data-en="Our primary and core specialty. We deliver Microchip programming services with high precision and supreme professionalism for various industries and technical applications.">
               تخصصنا الأول والأساسي. نقدم خدمات برمجة الرقائق الإلكترونية
               (Microchips) بدقة عالية واحترافية متناهية لمختلف الصناعات
               والتطبيقات التقنية.
             </p>
-            <!-- <span class="service-tag">⚡ نشط</span> -->
           </div>
           <div class="service-card reveal">
-            <!-- <span class="s-ico">✍️</span> -->
-            <h3>خدمات التدوين الإلكتروني</h3>
-            <p>
+            <h3 data-ar="خدمات التدوين الإلكتروني" data-en="Electronic Publishing Services">خدمات التدوين الإلكتروني</h3>
+            <p data-ar="نوفر خدمات تدوين إلكتروني احترافية بمحتوى تقني عالي الجودة، تساعد على تعزيز حضورك الرقمي وتقديم معلومات قيّمة لجمهورك المستهدف." data-en="We provide professional e-publishing services with high-quality technical content, helping to enhance your digital presence and deliver valuable information to your target audience.">
               نوفر خدمات تدوين إلكتروني احترافية بمحتوى تقني عالي الجودة، تساعد
               على تعزيز حضورك الرقمي وتقديم معلومات قيّمة لجمهورك المستهدف.
             </p>
-            <!-- <span class="service-tag">✅ نشط</span> -->
           </div>
           <div class="service-card reveal">
-            <!-- <span class="s-ico">🌐</span> -->
-            <h3>المجمع للتعامل الإلكتروني</h3>
-            <p>
+            <h3 data-ar="المجمع للتعامل الإلكتروني" data-en="Electronic Transaction Hub">المجمع للتعامل الإلكتروني</h3>
+            <p data-ar="تصميم وتطوير بوابات إلكترونية متكاملة تجمع بين سهولة الاستخدام وقوة التقنية، لتحقق تجربة مستخدم استثنائية وحلول رقمية شاملة." data-en="Design and development of integrated e-portals that combine ease of use with technological power, delivering exceptional user experience and comprehensive digital solutions.">
               تصميم وتطوير بوابات إلكترونية متكاملة تجمع بين سهولة الاستخدام
               وقوة التقنية، لتحقق تجربة مستخدم استثنائية وحلول رقمية شاملة.
             </p>
-            <!-- <span class="service-tag">🚀 نشط</span> -->
           </div>
           <div class="service-card light reveal">
-            <!-- <span class="s-ico">🤖</span> -->
-            <h3>حلول إنترنت الأشياء (IoT)</h3>
-            <p>
+            <h3 data-ar="حلول إنترنت الأشياء (IoT)" data-en="Internet of Things (IoT) Solutions">حلول إنترنت الأشياء (IoT)</h3>
+            <p data-ar="تطوير وتكامل حلول إنترنت الأشياء باستخدام أحدث الرقائق الذكية والمتحكمات الدقيقة لأتمتة الأنظمة وتحسين الكفاءة التشغيلية." data-en="Development and integration of IoT solutions using the latest smart chips and microcontrollers to automate systems and improve operational efficiency.">
               تطوير وتكامل حلول إنترنت الأشياء باستخدام أحدث الرقائق الذكية
               والمتحكمات الدقيقة لأتمتة الأنظمة وتحسين الكفاءة التشغيلية.
             </p>
-            <!-- <span class="service-tag">💡 استشاري</span> -->
           </div>
           <div class="service-card light reveal">
-            <!-- <span class="s-ico">🔒</span> -->
-            <h3>الأمن الإلكتروني للرقائق</h3>
-            <p>
+            <h3 data-ar="الأمن الإلكتروني للرقائق" data-en="Chip Cybersecurity">الأمن الإلكتروني للرقائق</h3>
+            <p data-ar="ضمان أمان الرقائق الإلكترونية والأنظمة المدمجة من خلال تطبيق أحدث تقنيات التشفير والحماية للحفاظ على سلامة البيانات." data-en="Ensuring the security of electronic chips and embedded systems by applying the latest encryption and protection technologies to maintain data integrity.">
               ضمان أمان الرقائق الإلكترونية والأنظمة المدمجة من خلال تطبيق أحدث
               تقنيات التشفير والحماية للحفاظ على سلامة البيانات.
             </p>
-            <!-- <span class="service-tag">🛡️ استشاري</span> -->
           </div>
           <div class="service-card light reveal">
-            <!-- <span class="s-ico">📱</span> -->
-            <h3>تطوير التطبيقات الرقمية</h3>
-            <p>
+            <h3 data-ar="تطوير التطبيقات الرقمية" data-en="Digital Application Development">تطوير التطبيقات الرقمية</h3>
+            <p data-ar="بناء تطبيقات وحلول رقمية متطورة تتصل مع الأنظمة الإلكترونية وتوفر واجهات مستخدم سلسة وتجارب رقمية متميزة." data-en="Building advanced digital applications and solutions that connect with electronic systems, providing seamless user interfaces and outstanding digital experiences.">
               بناء تطبيقات وحلول رقمية متطورة تتصل مع الأنظمة الإلكترونية وتوفر
               واجهات مستخدم سلسة وتجارب رقمية متميزة.
             </p>
-            <!-- <span class="service-tag">🌟 استشاري</span> -->
           </div>
         </div>
       </div>
@@ -1524,53 +1532,49 @@
     <section id="vision">
       <div class="container">
         <div class="section-header reveal">
-          <span class="section-tag">رؤيتنا وأهدافنا</span>
-          <h2 class="section-title">نحو مستقبل <span>رقمي أفضل</span></h2>
+          <span class="section-tag" data-ar="رؤيتنا وأهدافنا" data-en="Vision & Goals">رؤيتنا وأهدافنا</span>
+          <h2 class="section-title" data-ar="نحو مستقبل <span>رقمي أفضل</span>" data-en="Towards a <span>Better Digital Future</span>">نحو مستقبل <span>رقمي أفضل</span></h2>
           <div class="divider"></div>
-          <p class="section-sub">
+          <p class="section-sub" data-ar="نؤمن بالتقنية وسيلةً لبناء مستقبل أكثر ذكاءً وكفاءة" data-en="We believe in technology as a means to build a smarter, more efficient future">
             نؤمن بالتقنية وسيلةً لبناء مستقبل أكثر ذكاءً وكفاءة
           </p>
         </div>
         <div class="vision-grid">
           <div class="vision-card vision-full reveal">
-            <!-- <span class="vc-icon">🌟</span> -->
-            <h3>رؤيتنا</h3>
-            <p>
+            <h3 data-ar="رؤيتنا" data-en="Our Vision">رؤيتنا</h3>
+            <p data-ar="أن نكون الشريك التقني الأول والأكثر موثوقية في مجال برمجة الرقائق الإلكترونية والحلول الرقمية في منطقة الخليج العربي والشرق الأوسط، مساهمين في بناء مجتمع رقمي متقدم يواكب رؤية الإمارات 2071." data-en="To be the first and most trusted technical partner in the field of electronic chip programming and digital solutions across the Arabian Gulf and the Middle East, contributing to building an advanced digital society aligned with the UAE Vision 2071.">
               أن نكون الشريك التقني الأول والأكثر موثوقية في مجال برمجة الرقائق
               الإلكترونية والحلول الرقمية في منطقة الخليج العربي والشرق الأوسط،
               مساهمين في بناء مجتمع رقمي متقدم يواكب رؤية الإمارات 2071.
             </p>
           </div>
           <div class="vision-card reveal">
-            <!-- <span class="vc-icon">🎯</span> -->
-            <h3>رسالتنا</h3>
-            <p>
+            <h3 data-ar="رسالتنا" data-en="Our Mission">رسالتنا</h3>
+            <p data-ar="تقديم حلول تقنية إلكترونية متطورة ومبتكرة بأعلى معايير الجودة والاحترافية، مع بناء شراكات استراتيجية حقيقية مع عملائنا لتحقيق نمو مشترك ومستدام." data-en="Delivering advanced and innovative electronic technical solutions with the highest standards of quality and professionalism, while building genuine strategic partnerships with our clients to achieve shared and sustainable growth.">
               تقديم حلول تقنية إلكترونية متطورة ومبتكرة بأعلى معايير الجودة
               والاحترافية، مع بناء شراكات استراتيجية حقيقية مع عملائنا لتحقيق
               نمو مشترك ومستدام.
             </p>
           </div>
           <div class="vision-card reveal">
-            <!-- <span class="vc-icon">🚀</span> -->
-            <h3>أهدافنا الاستراتيجية</h3>
+            <h3 data-ar="أهدافنا الاستراتيجية" data-en="Strategic Goals">أهدافنا الاستراتيجية</h3>
             <ul>
-              <li>التوسع في تقديم خدمات برمجة الرقائق للقطاع الصناعي</li>
-              <li>بناء منظومة رقمية متكاملة للمشاريع الناشئة</li>
-              <li>توطين التقنية ونقل المعرفة في الإمارات</li>
-              <li>الاستثمار في الكوادر البشرية المتخصصة</li>
-              <li>تطوير حلول تكنولوجية مبتكرة لمتطلبات المستقبل</li>
+              <li data-ar="التوسع في تقديم خدمات برمجة الرقائق للقطاع الصناعي" data-en="Expanding chip programming services to the industrial sector">التوسع في تقديم خدمات برمجة الرقائق للقطاع الصناعي</li>
+              <li data-ar="بناء منظومة رقمية متكاملة للمشاريع الناشئة" data-en="Building an integrated digital ecosystem for startups">بناء منظومة رقمية متكاملة للمشاريع الناشئة</li>
+              <li data-ar="توطين التقنية ونقل المعرفة في الإمارات" data-en="Localizing technology and transferring knowledge in the UAE">توطين التقنية ونقل المعرفة في الإمارات</li>
+              <li data-ar="الاستثمار في الكوادر البشرية المتخصصة" data-en="Investing in specialized human capital">الاستثمار في الكوادر البشرية المتخصصة</li>
+              <li data-ar="تطوير حلول تكنولوجية مبتكرة لمتطلبات المستقبل" data-en="Developing innovative technological solutions for future requirements">تطوير حلول تكنولوجية مبتكرة لمتطلبات المستقبل</li>
             </ul>
           </div>
           <div class="vision-card reveal">
-            <!-- <span class="vc-icon">💎</span> -->
-            <h3>قيمنا الجوهرية</h3>
+            <h3 data-ar="قيمنا الجوهرية" data-en="Core Values">قيمنا الجوهرية</h3>
             <ul>
-              <li>الابتكار والإبداع في كل ما نقدم</li>
-              <li>النزاهة والشفافية في التعامل</li>
-              <li>الالتزام بالجودة والتميز</li>
-              <li>احترام العميل وتقدير وقته</li>
-              <li>المسؤولية الاجتماعية والتقنية</li>
-              <li>التطوير المستمر ومواكبة التغيير</li>
+              <li data-ar="الابتكار والإبداع في كل ما نقدم" data-en="Innovation and creativity in everything we offer">الابتكار والإبداع في كل ما نقدم</li>
+              <li data-ar="النزاهة والشفافية في التعامل" data-en="Integrity and transparency in dealings">النزاهة والشفافية في التعامل</li>
+              <li data-ar="الالتزام بالجودة والتميز" data-en="Commitment to quality and excellence">الالتزام بالجودة والتميز</li>
+              <li data-ar="احترام العميل وتقدير وقته" data-en="Respecting clients and valuing their time">احترام العميل وتقدير وقته</li>
+              <li data-ar="المسؤولية الاجتماعية والتقنية" data-en="Social and technical responsibility">المسؤولية الاجتماعية والتقنية</li>
+              <li data-ar="التطوير المستمر ومواكبة التغيير" data-en="Continuous development and embracing change">التطوير المستمر ومواكبة التغيير</li>
             </ul>
           </div>
         </div>
@@ -1581,118 +1585,88 @@
     <section id="contact">
       <div class="container">
         <div class="section-header reveal">
-          <span class="section-tag">تواصل معنا</span>
-          <h2 class="section-title">نحن هنا <span>لخدمتك</span></h2>
+          <span class="section-tag" data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</span>
+          <h2 class="section-title" data-ar="نحن هنا <span>لخدمتك</span>" data-en="We Are Here <span>to Serve You</span>">نحن هنا <span>لخدمتك</span></h2>
           <div class="divider"></div>
-          <p class="section-sub">
+          <p class="section-sub" data-ar="فريقنا جاهز للإجابة على استفساراتك وتقديم أفضل الحلول لاحتياجاتك" data-en="Our team is ready to answer your inquiries and provide the best solutions for your needs">
             فريقنا جاهز للإجابة على استفساراتك وتقديم أفضل الحلول لاحتياجاتك
           </p>
         </div>
         <div class="contact-grid">
           <div class="contact-info reveal">
-            <h2>تحدّث إلينا الآن</h2>
-            <p>
+            <h2 data-ar="تحدّث إلينا الآن" data-en="Talk to Us Now">تحدّث إلينا الآن</h2>
+            <p data-ar="يسعدنا التواصل معك وتقديم المساعدة في أي وقت. فريقنا المتخصص جاهز للرد على جميع استفساراتك وتقديم الحلول المناسبة لاحتياجاتك." data-en="We are delighted to communicate with you and provide assistance at any time. Our specialized team is ready to respond to all your inquiries and provide the right solutions for your needs.">
               يسعدنا التواصل معك وتقديم المساعدة في أي وقت. فريقنا المتخصص جاهز
               للرد على جميع استفساراتك وتقديم الحلول المناسبة لاحتياجاتك.
             </p>
             <div class="contact-items">
-              <a
-                href="https://wa.me/971585360592"
-                target="_blank"
-                class="contact-item"
-                style="text-decoration: none"
-              >
-                <!-- <div class="ci-icon">📱</div> -->
+              <a href="https://wa.me/971585360592" target="_blank" class="contact-item" style="text-decoration: none">
                 <div class="ci-text">
-                  <span>واتساب / هاتف متحرك</span>
+                  <span data-ar="واتساب / هاتف متحرك" data-en="WhatsApp / Mobile">واتساب / هاتف متحرك</span>
                   <strong dir="ltr">+971 58 536 0592</strong>
                 </div>
               </a>
-              <a
-                href="tel:+97148520944"
-                class="contact-item"
-                style="text-decoration: none"
-              >
-                <!-- <div class="ci-icon">📞</div> -->
+              <a href="tel:+97148520944" class="contact-item" style="text-decoration: none">
                 <div class="ci-text">
-                  <span>هاتف أرضي</span>
+                  <span data-ar="هاتف أرضي" data-en="Landline">هاتف أرضي</span>
                   <strong dir="ltr">+971 4 852 0944</strong>
                 </div>
               </a>
-              <a
-                href="mailto:hr@itn-gama.com"
-                class="contact-item"
-                style="text-decoration: none"
-              >
-                <!-- <div class="ci-icon">✉️</div> -->
+              <a href="mailto:hr@itn-gama.com" class="contact-item" style="text-decoration: none">
                 <div class="ci-text">
-                  <span>البريد الإلكتروني</span>
+                  <span data-ar="البريد الإلكتروني" data-en="Email">البريد الإلكتروني</span>
                   <strong>info@itn-gama.com</strong>
                 </div>
               </a>
               <div class="contact-item">
-                <!-- <div class="ci-icon">📍</div> -->
                 <div class="ci-text">
-                  <span>الموقع</span>
-                  <strong>فريج المرر، دبي، الإمارات العربية المتحدة</strong>
+                  <span data-ar="الموقع" data-en="Location">الموقع</span>
+                  <strong data-ar="فريج المرر، دبي، الإمارات العربية المتحدة" data-en="Frij Al Murar, Dubai, United Arab Emirates">فريج المرر، دبي، الإمارات العربية المتحدة</strong>
                 </div>
               </div>
               <div class="contact-item">
-                <!-- <div class="ci-icon">🏢</div> -->
                 <div class="ci-text">
-                  <span>صندوق بريد</span>
-                  <strong>88878 - دبي، الإمارات</strong>
+                  <span data-ar="صندوق بريد" data-en="P.O. Box">صندوق بريد</span>
+                  <strong data-ar="88878 - دبي، الإمارات" data-en="88878 - Dubai, UAE">88878 - دبي، الإمارات</strong>
                 </div>
               </div>
             </div>
           </div>
           <div class="contact-form reveal">
-            <h3>أرسل لنا رسالة</h3>
+            <h3 data-ar="أرسل لنا رسالة" data-en="Send Us a Message">أرسل لنا رسالة</h3>
             <div class="form-row">
               <div class="form-group">
-                <label>الاسم الكامل</label>
-                <input id="f-name" type="text" placeholder="أدخل اسمك" />
+                <label data-ar="الاسم الكامل" data-en="Full Name">الاسم الكامل</label>
+                <input id="f-name" type="text" placeholder="أدخل اسمك" data-ar-placeholder="أدخل اسمك" data-en-placeholder="Enter your name" />
               </div>
               <div class="form-group">
-                <label>رقم الهاتف</label>
+                <label data-ar="رقم الهاتف" data-en="Phone Number">رقم الهاتف</label>
                 <input id="f-phone" type="tel" placeholder="+971 ..." />
               </div>
             </div>
             <div class="form-group">
-              <label>البريد الإلكتروني</label>
-              <input
-                id="f-email"
-                type="email"
-                placeholder="example@email.com"
-              />
+              <label data-ar="البريد الإلكتروني" data-en="Email Address">البريد الإلكتروني</label>
+              <input id="f-email" type="email" placeholder="example@email.com" />
             </div>
             <div class="form-group">
-              <label>الخدمة المطلوبة</label>
+              <label data-ar="الخدمة المطلوبة" data-en="Required Service">الخدمة المطلوبة</label>
               <select id="f-service">
-                <option>برمجة الرقائق الإلكترونية</option>
-                <option>خدمات التدوين الإلكتروني</option>
-                <option>البوابة الإلكترونية</option>
-                <option>استشارة تقنية</option>
-                <option>أخرى</option>
+                <option data-ar="برمجة الرقائق الإلكترونية" data-en="Electronic Chip Programming">برمجة الرقائق الإلكترونية</option>
+                <option data-ar="خدمات التدوين الإلكتروني" data-en="Electronic Publishing Services">خدمات التدوين الإلكتروني</option>
+                <option data-ar="البوابة الإلكترونية" data-en="Electronic Portal">البوابة الإلكترونية</option>
+                <option data-ar="استشارة تقنية" data-en="Technical Consultation">استشارة تقنية</option>
+                <option data-ar="أخرى" data-en="Other">أخرى</option>
               </select>
             </div>
             <div class="form-group">
-              <label>رسالتك</label>
-              <textarea id="f-msg" placeholder="اكتب رسالتك هنا..."></textarea>
+              <label data-ar="رسالتك" data-en="Your Message">رسالتك</label>
+              <textarea id="f-msg" placeholder="اكتب رسالتك هنا..." data-ar-placeholder="اكتب رسالتك هنا..." data-en-placeholder="Write your message here..."></textarea>
             </div>
             <button class="form-submit" onclick="sendMsg()">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="white"
-                style="vertical-align: middle; margin-left: 8px"
-              >
-                <path
-                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
-                />
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="white" style="vertical-align: middle; margin-left: 8px">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
               </svg>
-              إرسال عبر واتساب
+              <span data-ar="إرسال عبر واتساب" data-en="Send via WhatsApp">إرسال عبر واتساب</span>
             </button>
           </div>
         </div>
@@ -1710,39 +1684,39 @@
               <span class="logo-ar">مؤسسة برمجة الرقائق الإلكترونية</span>
             </div>
           </div>
-          <p>
+          <p data-ar="مؤسسة متخصصة مرخصة رسمياً في دبي، تقدم حلولاً تقنية متطورة في مجال برمجة الرقائق الإلكترونية والخدمات الرقمية." data-en="A specialized, officially licensed institution in Dubai, providing advanced technical solutions in electronic chip programming and digital services.">
             مؤسسة متخصصة مرخصة رسمياً في دبي، تقدم حلولاً تقنية متطورة في مجال
             برمجة الرقائق الإلكترونية والخدمات الرقمية.
           </p>
         </div>
         <div>
-          <h4>روابط سريعة</h4>
+          <h4 data-ar="روابط سريعة" data-en="Quick Links">روابط سريعة</h4>
           <ul>
-            <li><a href="#hero">الرئيسية</a></li>
-            <li><a href="#about">من نحن</a></li>
-            <li><a href="#services">خدماتنا</a></li>
-            <li><a href="#why">لماذا نحن</a></li>
-            <li><a href="#vision">رؤيتنا</a></li>
-            <li><a href="#contact">تواصل معنا</a></li>
+            <li><a href="#hero" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
+            <li><a href="#about" data-ar="من نحن" data-en="About Us">من نحن</a></li>
+            <li><a href="#services" data-ar="خدماتنا" data-en="Services">خدماتنا</a></li>
+            <li><a href="#why" data-ar="لماذا نحن" data-en="Why Us">لماذا نحن</a></li>
+            <li><a href="#vision" data-ar="رؤيتنا" data-en="Vision">رؤيتنا</a></li>
+            <li><a href="#contact" data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</a></li>
           </ul>
         </div>
         <div>
-          <h4>خدماتنا</h4>
+          <h4 data-ar="خدماتنا" data-en="Our Services">خدماتنا</h4>
           <ul>
-            <li><a href="#services">برمجة الرقائق الإلكترونية</a></li>
-            <li><a href="#services">التدوين الإلكتروني</a></li>
-            <li><a href="#services">البوابة الإلكترونية</a></li>
-            <li><a href="#services">حلول IoT</a></li>
-            <li><a href="#services">الأمن الإلكتروني</a></li>
+            <li><a href="#services" data-ar="برمجة الرقائق الإلكترونية" data-en="Electronic Chip Programming">برمجة الرقائق الإلكترونية</a></li>
+            <li><a href="#services" data-ar="التدوين الإلكتروني" data-en="Electronic Publishing">التدوين الإلكتروني</a></li>
+            <li><a href="#services" data-ar="البوابة الإلكترونية" data-en="Electronic Portal">البوابة الإلكترونية</a></li>
+            <li><a href="#services" data-ar="حلول IoT" data-en="IoT Solutions">حلول IoT</a></li>
+            <li><a href="#services" data-ar="الأمن الإلكتروني" data-en="Cybersecurity">الأمن الإلكتروني</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
         <p>
-          © 2026 <span>ITN GAMA</span> — جميع الحقوق محفوظة | رخصة مهنية رقم:
+          © 2026 <span>ITN GAMA</span> — <span data-ar="جميع الحقوق محفوظة | رخصة مهنية رقم:" data-en="All Rights Reserved | Professional License No:">جميع الحقوق محفوظة | رخصة مهنية رقم:</span>
           1615566
         </p>
-        <p>دبي، الإمارات العربية المتحدة 🇦🇪</p>
+        <p data-ar="دبي، الإمارات العربية المتحدة 🇦🇪" data-en="Dubai, United Arab Emirates 🇦🇪">دبي، الإمارات العربية المتحدة 🇦🇪</p>
       </div>
     </footer>
 
@@ -1760,7 +1734,7 @@
             d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
           />
         </svg>
-        <span class="float-tooltip">واتساب</span>
+        <span class="float-tooltip" data-ar="واتساب" data-en="WhatsApp">واتساب</span>
       </a>
       <a href="tel:+971585360592" class="float-btn phone" title="اتصل بنا">
         <div class="ring"></div>
@@ -1769,7 +1743,7 @@
             d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
           />
         </svg>
-        <span class="float-tooltip">اتصل بنا</span>
+        <span class="float-tooltip" data-ar="اتصل بنا" data-en="Call Us">اتصل بنا</span>
       </a>
     </div>
 
@@ -1857,7 +1831,97 @@
         window.open(url, "_blank");
       }
 
-      // Animate stats counter
+      // ===== LANGUAGE TOGGLE =====
+      let currentLang = 'ar';
+
+      function toggleLang() {
+        currentLang = currentLang === 'ar' ? 'en' : 'ar';
+        applyLang(currentLang);
+      }
+
+      function applyLang(lang) {
+        const html = document.documentElement;
+        const isEn = lang === 'en';
+
+        // Update html dir & lang
+        html.setAttribute('lang', isEn ? 'en' : 'ar');
+        html.setAttribute('dir', isEn ? 'ltr' : 'rtl');
+
+        // Update page title
+        document.title = isEn
+          ? 'ITN GAMA – Electronic Chips Programming EST.'
+          : 'مؤسسة ITN GAMA لبرمجة الرقائق الإلكترونية';
+
+        // Update button
+        document.getElementById('lang-flag').textContent = isEn ? 'AR' : 'EN';
+        // Scroll to top
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        // Update font family
+        document.body.style.fontFamily = isEn
+          ? '"Rajdhani", "Segoe UI", sans-serif'
+          : '"Tajawal", sans-serif';
+
+        // Translate all elements with data-ar / data-en
+        document.querySelectorAll('[data-ar][data-en]').forEach(el => {
+          const val = el.getAttribute(isEn ? 'data-en' : 'data-ar');
+          if (val !== null) {
+            // Use innerHTML to allow <span> tags inside headings
+            el.innerHTML = val;
+          }
+        });
+
+        // Translate select <option> elements
+        document.querySelectorAll('option[data-ar][data-en]').forEach(opt => {
+          opt.textContent = opt.getAttribute(isEn ? 'data-en' : 'data-ar');
+        });
+
+        // Translate placeholders
+        document.querySelectorAll('[data-ar-placeholder][data-en-placeholder]').forEach(el => {
+          el.placeholder = el.getAttribute(isEn ? 'data-en-placeholder' : 'data-ar-placeholder');
+        });
+
+        // Flip nav ul direction
+        document.querySelectorAll('nav ul').forEach(ul => {
+          ul.style.direction = isEn ? 'ltr' : 'rtl';
+        });
+
+        // Flip contact-item hover (translateX direction)
+        const style = document.getElementById('lang-dynamic-style') || document.createElement('style');
+        style.id = 'lang-dynamic-style';
+        style.textContent = isEn
+          ? `.about-feature:hover { transform: translateX(4px) !important; }
+             .contact-item:hover { transform: translateX(4px) !important; }`
+          : '';
+        document.head.appendChild(style);
+
+        // Update sendMsg alert text
+        window._langIsEn = isEn;
+      }
+
+      // Patch sendMsg for EN alert
+      const _origSendMsg = sendMsg;
+      sendMsg = function() {
+        const name = document.getElementById("f-name").value.trim();
+        if (!name) {
+          alert(window._langIsEn ? "Please enter your name" : "من فضلك أدخل اسمك");
+          return;
+        }
+        const phone = document.getElementById("f-phone").value.trim();
+        const email = document.getElementById("f-email").value.trim();
+        const service = document.getElementById("f-service").value;
+        const msg = document.getElementById("f-msg").value.trim();
+        const text =
+          `Hello ITN GAMA 👋\n` +
+          `━━━━━━━━━━━━━━━\n` +
+          (window._langIsEn
+            ? `👤 Name: ${name}\n` + (phone ? `📱 Phone: ${phone}\n` : "") + (email ? `✉️ Email: ${email}\n` : "") + `🔧 Service: ${service}\n` + (msg ? `💬 Message: ${msg}\n` : "")
+            : `👤 الاسم: ${name}\n` + (phone ? `📱 الهاتف: ${phone}\n` : "") + (email ? `✉️ الإيميل: ${email}\n` : "") + `🔧 الخدمة المطلوبة: ${service}\n` + (msg ? `💬 الرسالة: ${msg}\n` : "")
+          ) +
+          `━━━━━━━━━━━━━━━`;
+        const url = `https://wa.me/971585360592?text=${encodeURIComponent(text)}`;
+        window.open(url, "_blank");
+      };
       function animateCount(el, target, suffix = "") {
         let count = 0;
         const step = Math.ceil(target / 40);
